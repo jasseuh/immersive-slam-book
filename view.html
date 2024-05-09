@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Slam Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="slam-book">
+    <form name="slam-book" method="post">
+      <div id="greeting-card">
+        <div>
+          <h2>CS Elect 1</h2>
+          <br>
+          <h2>By Jhon Jasser A. Garcia</h2>
+          <h3>BSCS 2D</h3>
+        </div>
+      </div>
+      <div class="leaf current">
+        <fieldset class="page" id="front">
+          <div>
+            <h1>🧑  My  🧑<br>🔥<span style="font-family: fantasy; font-size: 150%">Slam</span>🔥<br>📚 Book 📚</h1>
+          </div>
+        </fieldset>
+        <fieldset class="page">
+          <p>Oh hello 🤗</p>
+        </fieldset>
+      </div>
+      <div class="leaf">
+        <fieldset class="page chapter" id="profile">
+          <h1>👨 Profile</h1>
+          <a href="#profile" class="bookmark"><span>👨 profile</span></a>
+        </fieldset>
+        <fieldset class="page">
+          <center>
+            <h3>Profile Picture</h3>
+            <img name="pp-image" id="pp-image" src="./man.svg" onclick="getPP()">
+            <input
+              type="file"
+              name="file-choose"
+              value="" accept="image/png, image/jpeg"
+              id="file-choose"
+              oninput="setPP(this)"
+              style="display: none">
+          </center>
+        </fieldset>
+      </div>
+      <div class="leaf">
+        <fieldset class="page">
+          <label for="name">🗣 Name</label>
+          <input type="text" name="name" value="" placeholder="Enter your full name" id="name" autocomplete="on">
+          <label for="age">🔞 Age</label>
+          <input type="text" name="age" value="" placeholder="Enter your age" id="age">
+          <label for="gender">🥚 Gender</label>
+          <input type="text" name="gender" value="" id="gender" style="text-transform: capitalize;">
+          <input type="text" name="gender-specify" id="gender-specify" value="" placeholder="">
+          <label for="address">🏠 Address</label>
+          <input type="text" name="address" value="" placeholder="Enter your home address" id="address" autocomplete="on">
+          <label for="email">📧 E-mail</label>
+          <input type="email" name="email" value="" placeholder="Enter your e-mail address" id="email" autocomplete="on">
+          <label for="language">🌐 Language</label>
+          <input type="text" name="language" value="" placeholder="Select your language" list="langs" id="language">
+          <datalist id="langs">
+            <option value="English (US)"></option>
+            <option value="English (GB)"></option>
+            <option value="Filipino (PH)"></option>
+            <option value="Japanese (JP)"></option>
+          </datalist>
+          <label for="course">🏫 Course</label>
+          <input type="text" name="course" value="" placeholder="Select your course" list="courses" id="course">
+          <datalist id="courses">
+            <option value="Bachelor of Science in Computer Science"></option>
+            <option value="Bachelor of Arts in Political Science"></option>
+            <option value="Bachelor of Arts in Business Administration"></option>
+            <option value="Bachelor of Elementary Education"></option>
+            <option value="Bachelor of Secondary Education"></option>
+          </datalist>
+          <label for="bio">🧬 Bio</label>
+          <textarea name="bio" id="bio" value="" placeholder="Write your bio..." style="height: 64px; resize: vertical;"></textarea>
+        </fieldset>
+        <fieldset class="page chapter" id="favourites">
+          <h1>⭐ Favourites</h1>
+          <a href="#favourites" class="bookmark"><span>⭐ favourites</span></a>
+        </fieldset>
+      </div>
+      <div class="leaf">
+        <fieldset class="page">
+          <label for="color">🔴 Favourite Color</label>
+          <input type="text" name="color" value="" placeholder="Enter your favourite color" id="color" autocomplete="off">
+          <label for="drink">🍹 Favourite Drink</label>
+          <input type="text" name="drink" value="" placeholder="Enter your favourite drink" id="drink" autocomplete="off">
+          <label for="food">🍔 Favourite Food</label>
+          <input type="text" name="food" value="" placeholder="Enter your favourite food" id="food" autocomplete="off">
+          <label for="pet">🐕 Favourite Pet</label>
+          <input type="text" name="pet" value="" placeholder="Enter your favourite pet" id="pet" autocomplete="off">
+          <label for="number">🔢 Favourite Number</label>
+          <input type="text" name="number" value="" placeholder="Enter your favourite number" id="number" autocomplete="off">
+          <label for="band">👨‍🎤 Favourite Band</label>
+          <input type="text" name="band" value="" placeholder="Enter your favourite band" id="band" autocomplete="off">
+          <label for="song">🎶 Favourite Song</label>
+          <input type="text" name="song" value="" placeholder="Enter your favourite song" id="song" autocomplete="off">
+          <label for="quote">✒ Favourite Quote</label>
+          <input type="text" name="quote" value="" placeholder="Enter your favourite quote" id="quote" autocomplete="off">
+        </fieldset>
+        <fieldset class="page chapter" id="fun-facts">
+          <h1>😲 Fun Facts</h1>
+          <a href="#fun-facts" class="bookmark"><span>😲 Fun Facts</span></a>
+        </fieldset>
+      </div>
+      <div class="leaf">
+        <fieldset class="page">
+          <label for="status">🤨 Status</label>
+          <input type="text" name="status" value="single" id="status" style="text-transform: capitalize;">
+          <input type="text" name="status-specify" id="status-specify" placeholder="">
+          <label for="crush">💘 Who is your crush?</label>
+          <input type="password" name="crush" value="" id="crush" autocomplete="off">
+          <label for="love">💞 Who is your first love?</label>
+          <input type="password" name="love" value="" id="love" autocomplete="off">
+          <label for="meet">👫 Where did you meet?</label>
+          <input type="password" name="meet" value="" id="meet" autocomplete="off">
+          <label for="kiss">💋 Who is your first kiss?</label>
+          <input type="password" name="kiss" value="" id="kiss" autocomplete="off">
+          <div style="width: fit-content;"> 
+            <input type="checkbox" name="fun-facts-reveal" id="fun-facts-reveal">
+            <label for="fun-facts-reveal">😈 Show 'em</label>
+          </div>
+        </fieldset>
+        <fieldset class="page chapter" id="stories">
+          <h1>🎈 Stories</h1>
+          <a href="#stories" class="bookmark"><span>🎈 Stories</span></a>
+        </fieldset>
+      </div>
+      <div class="leaf">
+        <fieldset class="page">
+          <label for="unforgettable">😭 What is your most unforgettable moment?</label>
+          <textarea name="unforgettable" id="unforgettable" value="" placeholder="My most unforgettable moment..." style="height: 64px; resize: vertical;"></textarea>
+          <label for="embarassing">😳 What is your most embarassing moment?</label>
+          <textarea name="embarassing" id="embarassing" value="" placeholder="My most embarassing moment..." style="height: 64px; resize: vertical;"></textarea>
+          <label for="funniest">😂 What is your funniest moment?</label>
+          <textarea name="funniest" id="funniest" value="" placeholder="My funniest moment..." style="height: 64px; resize: vertical;"></textarea>
+        </fieldset>
+        <fieldset class="page" id="back">
+        </fieldset>
+      </div>
+      <div class="leaf blank">
+        <input type="submit" name="submit"style="display: none">
+      </div>
+    </form>
+  </div>
+  <div id="nav">
+    <button onclick="first()">⏮</button>
+    <button onclick="previous()">◀</button>
+    <button onclick="clearAll()" id="clearAll" style="display: none">🔄</button>
+    <button onclick="save()" id="save" style="display: none">💾</button>
+    <button onclick="edit()" id="edit">🖊</button>
+    <button onclick="next()">▶</button>
+    <button onclick="last()">⏭</button>
+  </div>
+  <!-- <script src="./twemoji/twemoji.js"></script> -->
+  <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('pp-image').style.pointerEvents = 'none';
+    const inputs = document.querySelectorAll(
+      'input[type="text"],input[type="password"],textarea');
+    inputs.forEach(el => el.readOnly = 'true');
+    const specify = document.querySelectorAll('[id*="specify"]');
+    specify.forEach(el =>
+        !localStorage.getItem(el.name) ? el.style.display = 'none' : '');
+  </script>
+</body>
+</html>

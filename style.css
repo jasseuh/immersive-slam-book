@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #222;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: sans-serif;
+}
+
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 .1em;
+  vertical-align: -0.1em;
+}
+
+#slam-book,
+#slam-book > form {
+  height: 512px;
+  position: relative;
+  width: 1024px;
+
+  perspective: 3000px;
+}
+
+#slam-book > form {
+  scale: 0.8;
+}
+
+#greeting-card {
+  display: grid;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  width: 50%;
+  z-index: -99;
+
+  text-align: center;
+  color: #ddd;
+
+  place-items: center;
+}
+
+#front.page {
+  display: grid;
+  text-align: center;
+
+  font-size: 150%;
+
+  place-items: center;
+}
+
+.leaf {
+  height: 100%;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  width: 50%;
+
+  transition: rotate 600ms;
+
+  rotate: 0deg 0 1 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+}
+
+.page {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 32px;
+  position: absolute;
+  width: 100%;
+
+  flex-direction: column;
+
+  background: linear-gradient(to right, #ddd 90%, #aaa);
+  border: none;
+}
+
+.page > * {
+  width: 100%;
+}
+
+.page:first-child {
+  background: linear-gradient(to left, #ddd 90%, #aaa);
+}
+
+#front.page,
+#back.page {
+  background: linear-gradient(#ddd, #ddd);
+}
+
+.page:last-child {
+  rotate: -180deg 0 1 0;
+}
+
+.leaf.turned {
+  rotate: -180deg 0 1 0;
+}
+
+.page.chapter {
+  display: grid;
+  place-items: center;
+}
+
+.page.chapter h1 {
+  font-size: 48px;
+}
+
+.bookmark {
+  color: #ddd;
+  display: flex;
+  position: absolute;
+  height: fit-content;
+  width: 32px;
+  top: 0;
+  padding: 8px;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 800;
+  writing-mode: vertical-lr;
+
+  align-items: center;
+
+  transition: translate 200ms, rotate 200ms;
+
+  translate: 0 -50%;
+  rotate: 0deg 0 1 0;
+}
+
+.bookmark:hover {
+  translate: 0 -100%;
+}
+
+.page:last-child .bookmark {
+  rotate: 180deg 0 1 0;
+}
+
+.leaf.turned .page:first-child .bookmark {
+  rotate: 180deg 0 1 0;
+}
+
+.leaf.turned .page:last-child .bookmark {
+  rotate: 0deg 0 1 0;
+}
+
+.bookmark span {
+  pointer-events: none;
+}
+
+#pp-image {
+  width: 75%;
+
+  aspect-ratio: 1;
+  border-radius: 8px;
+  cursor: pointer;
+  object-fit: cover;
+  overflow: hidden;
+
+  transition: scale 200ms;
+
+  scale: 90%;
+}
+
+#pp-image:hover {
+  scale: 100%;
+}
+
+.page > input[type='text'],
+.page > input[type='email'],
+.page > input[type='password'],
+.page > textarea {
+  margin-bottom: 8px;
+}
+
+#slam-book input[type='text'],
+#slam-book input[type='email'],
+#slam-book input[type='password'],
+#slam-book textarea {
+  background-color: #0000;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid #222;
+
+  transition: border-bottom 200ms;
+}
+
+#slam-book input[type='text']:focus,
+#slam-book input[type='password']:focus,
+#slam-book textarea:focus {
+  border-bottom: 2px solid darkcyan;
+  outline: none;
+}
+
+#nav {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+}
+
+#nav button {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  width: 32px;
+  aspect-ratio: 1;
+  margin: 16px;
+
+  cursor: pointer;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(1.0);
+  background-color: darkcyan;
+
+  transition: filter 100ms, scale 100ms;
+
+  scale: 1.5;
+}
+
+#nav button:hover {
+  filter: brightness(1.5);
+  scale: 2;
+}
